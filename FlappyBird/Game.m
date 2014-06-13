@@ -22,9 +22,26 @@ int birdFlight;
 @implementation Game
 
 - (IBAction)startGame:(id)sender {
+    _startGame.hidden = YES;
+    birdMovment = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(birdMoving) userInfo:nil repeats:YES];
+    
 }
 -(void)birdMoving{
-    
+    _bird.center = CGPointMake(_bird.center.x, _bird.center.y - birdFlight);
+    birdFlight = birdFlight - 5;
+    if(birdFlight < -15){
+        birdFlight = -15;
+    }
+    if(birdFlight > 0){
+        _bird.image = [UIImage imageNamed:@"BirdUp.png"];
+    }
+    if(birdFlight < 0){
+        _bird.image = [UIImage imageNamed:@"BirdDown.png"];
+    }
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    birdFlight = 30;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
