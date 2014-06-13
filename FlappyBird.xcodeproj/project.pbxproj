@@ -21,6 +21,14 @@
 		EAFA3B41194AB5BE0057429B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAFA3B23194AB5BE0057429B /* UIKit.framework */; };
 		EAFA3B49194AB5BE0057429B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B47194AB5BE0057429B /* InfoPlist.strings */; };
 		EAFA3B4B194AB5BE0057429B /* FlappyBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA3B4A194AB5BE0057429B /* FlappyBirdTests.m */; };
+		EAFA3B59194AB66C0057429B /* BirdDown.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B54194AB66C0057429B /* BirdDown.png */; };
+		EAFA3B5A194AB66C0057429B /* BirdUp.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B55194AB66C0057429B /* BirdUp.png */; };
+		EAFA3B5B194AB66C0057429B /* GameBack.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B56194AB66C0057429B /* GameBack.png */; };
+		EAFA3B5C194AB66C0057429B /* MainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B57194AB66C0057429B /* MainMenu.png */; };
+		EAFA3B5D194AB66C0057429B /* Tunnel.png in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B58194AB66C0057429B /* Tunnel.png */; };
+		EAFA3B5F194AB70E0057429B /* doc in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B5E194AB70E0057429B /* doc */; };
+		EAFA3B61194AB7230057429B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EAFA3B60194AB7230057429B /* README.md */; };
+		EAFA3B64194ACFD10057429B /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = EAFA3B63194ACFD10057429B /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +61,15 @@
 		EAFA3B46194AB5BE0057429B /* FlappyBirdTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlappyBirdTests-Info.plist"; sourceTree = "<group>"; };
 		EAFA3B48194AB5BE0057429B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAFA3B4A194AB5BE0057429B /* FlappyBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlappyBirdTests.m; sourceTree = "<group>"; };
+		EAFA3B54194AB66C0057429B /* BirdDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BirdDown.png; sourceTree = "<group>"; };
+		EAFA3B55194AB66C0057429B /* BirdUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BirdUp.png; sourceTree = "<group>"; };
+		EAFA3B56194AB66C0057429B /* GameBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameBack.png; sourceTree = "<group>"; };
+		EAFA3B57194AB66C0057429B /* MainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainMenu.png; sourceTree = "<group>"; };
+		EAFA3B58194AB66C0057429B /* Tunnel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tunnel.png; sourceTree = "<group>"; };
+		EAFA3B5E194AB70E0057429B /* doc */ = {isa = PBXFileReference; lastKnownFileType = folder; path = doc; sourceTree = "<group>"; };
+		EAFA3B60194AB7230057429B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		EAFA3B62194ACFD10057429B /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		EAFA3B63194ACFD10057429B /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +99,12 @@
 		EAFA3B13194AB5BE0057429B = {
 			isa = PBXGroup;
 			children = (
+				EAFA3B60194AB7230057429B /* README.md */,
 				EAFA3B25194AB5BE0057429B /* FlappyBird */,
 				EAFA3B44194AB5BE0057429B /* FlappyBirdTests */,
 				EAFA3B1E194AB5BE0057429B /* Frameworks */,
 				EAFA3B1D194AB5BE0057429B /* Products */,
+				EAFA3B5E194AB70E0057429B /* doc */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +136,8 @@
 				EAFA3B31194AB5BE0057429B /* Main.storyboard */,
 				EAFA3B34194AB5BE0057429B /* ViewController.h */,
 				EAFA3B35194AB5BE0057429B /* ViewController.m */,
+				EAFA3B62194ACFD10057429B /* Game.h */,
+				EAFA3B63194ACFD10057429B /* Game.m */,
 				EAFA3B37194AB5BE0057429B /* Images.xcassets */,
 				EAFA3B26194AB5BE0057429B /* Supporting Files */,
 			);
@@ -126,6 +147,11 @@
 		EAFA3B26194AB5BE0057429B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EAFA3B54194AB66C0057429B /* BirdDown.png */,
+				EAFA3B55194AB66C0057429B /* BirdUp.png */,
+				EAFA3B56194AB66C0057429B /* GameBack.png */,
+				EAFA3B57194AB66C0057429B /* MainMenu.png */,
+				EAFA3B58194AB66C0057429B /* Tunnel.png */,
 				EAFA3B27194AB5BE0057429B /* FlappyBird-Info.plist */,
 				EAFA3B28194AB5BE0057429B /* InfoPlist.strings */,
 				EAFA3B2B194AB5BE0057429B /* main.m */,
@@ -228,8 +254,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAFA3B5F194AB70E0057429B /* doc in Resources */,
+				EAFA3B59194AB66C0057429B /* BirdDown.png in Resources */,
+				EAFA3B61194AB7230057429B /* README.md in Resources */,
+				EAFA3B5C194AB66C0057429B /* MainMenu.png in Resources */,
+				EAFA3B5A194AB66C0057429B /* BirdUp.png in Resources */,
+				EAFA3B5D194AB66C0057429B /* Tunnel.png in Resources */,
 				EAFA3B38194AB5BE0057429B /* Images.xcassets in Resources */,
 				EAFA3B2A194AB5BE0057429B /* InfoPlist.strings in Resources */,
+				EAFA3B5B194AB66C0057429B /* GameBack.png in Resources */,
 				EAFA3B33194AB5BE0057429B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +285,7 @@
 				EAFA3B36194AB5BE0057429B /* ViewController.m in Sources */,
 				EAFA3B30194AB5BE0057429B /* AppDelegate.m in Sources */,
 				EAFA3B2C194AB5BE0057429B /* main.m in Sources */,
+				EAFA3B64194ACFD10057429B /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
