@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 
+NSInteger hightScoreNumber;
+
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UILabel *highScore;
 
 @end
 
@@ -17,7 +21,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    hightScoreNumber = [[NSUserDefaults standardUserDefaults]integerForKey:@"highScoreSaved"];
+    _highScore.text = [NSString stringWithFormat:@"HighScore:%li",(long)hightScoreNumber];
 }
 
 - (void)didReceiveMemoryWarning

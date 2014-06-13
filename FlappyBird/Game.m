@@ -11,6 +11,8 @@
 int birdFlight;
 int randomTopTunnelPosition;
 int randomBottomTunnelPosition;
+int scoreNumber;
+NSInteger highScoreNumber;
 
 @interface Game (){
     NSTimer *birdMovment;
@@ -24,10 +26,30 @@ int randomBottomTunnelPosition;
 @property (weak, nonatomic) IBOutlet UIImageView *tunnelBottom;
 @property (weak, nonatomic) IBOutlet UIImageView *top;
 @property (weak, nonatomic) IBOutlet UIImageView *bottom;
+@property (weak, nonatomic) IBOutlet UIButton *exit;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
 
 @implementation Game
+
+-(void)score{
+    scoreNumber += 1;
+    _scoreLabel.text = [NSString stringWithFormat:@"%i",scoreNumber];
+}
+
+-(void)gameOver{
+    if(scoreNumber > highScoreNumber){
+        [[NSUserDefaults standardUserDefaults]setInteger:scoreNumber forKey:@"highScoreSaved"];
+    }
+    [tunnelMovment invalidate];
+    [birdMovment invalidate];
+    
+    _exit.hidden = NO;
+    _tunnelTop.hidden = YES;
+    _tunnelBottom.hidden = YES;
+    _bird.hidden = YES;
+}
 
 - (IBAction)startGame:(id)sender {
     _tunnelTop.hidden = NO;
@@ -46,6 +68,21 @@ int randomBottomTunnelPosition;
     if(_tunnelTop.center.x < -28 || _tunnelBottom.center.x < -28){
         [self placeTunnels];
     }
+    if(_tunnelTop.center.x == 30){
+        [self score];
+    }
+    if(CGRectIntersectsRect(_bird.frame, _tunnelTop.frame)){
+        [self gameOver];
+    }
+    if(CGRectIntersectsRect(_bird.frame, _tunnelBottom.frame)){
+        [self gameOver];
+    }
+    if(CGRectIntersectsRect(_bird.frame,_top.frame)){
+        [self gameOver];
+    }
+    if(CGRectIntersectsRect(_bird.frame, _bottom.frame)){
+        [self gameOver];
+    }
     
     
 }
@@ -59,9 +96,9 @@ int randomBottomTunnelPosition;
 }
 -(void)birdMoving{
     _bird.center = CGPointMake(_bird.center.x, _bird.center.y - birdFlight);
-    birdFlight = birdFlight - 5;
-    if(birdFlight < -15){
-        birdFlight = -15;
+    birdFlight = birdFlight - 3;
+    if(birdFlight < -10){
+        birdFlight = -10;
     }
     if(birdFlight > 0){
         _bird.image = [UIImage imageNamed:@"BirdUp.png"];
@@ -72,7 +109,7 @@ int randomBottomTunnelPosition;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    birdFlight = 30;
+    birdFlight = 20;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -87,6 +124,11 @@ int randomBottomTunnelPosition;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    scoreNumber = 0;
+    highScoreNumber = [[NSUserDefaults standardUserDefaults]integerForKey:@"highScoreSaved"];
+    
+    _exit.hidden = YES;
     
     _tunnelTop.hidden = YES;
     _tunnelBottom.hidden = YES;
