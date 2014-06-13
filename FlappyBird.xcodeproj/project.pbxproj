@@ -414,6 +414,7 @@
 				GCC_PREFIX_HEADER = "FlappyBird/FlappyBird-Prefix.pch";
 				INFOPLIST_FILE = "FlappyBird/FlappyBird-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -427,6 +428,7 @@
 				GCC_PREFIX_HEADER = "FlappyBird/FlappyBird-Prefix.pch";
 				INFOPLIST_FILE = "FlappyBird/FlappyBird-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -490,6 +492,7 @@
 				EAFA3B50194AB5BE0057429B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAFA3B51194AB5BE0057429B /* Build configuration list for PBXNativeTarget "FlappyBirdTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +501,7 @@
 				EAFA3B53194AB5BE0057429B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

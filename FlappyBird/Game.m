@@ -9,22 +9,53 @@
 #import "Game.h"
 
 int birdFlight;
+int randomTopTunnelPosition;
+int randomBottomTunnelPosition;
 
 @interface Game (){
     NSTimer *birdMovment;
+    NSTimer *tunnelMovment;
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *bird;
 @property (weak, nonatomic) IBOutlet UIButton *startGame;
+
+@property (weak, nonatomic) IBOutlet UIImageView *tunnelTop;
+@property (weak, nonatomic) IBOutlet UIImageView *tunnelBottom;
+@property (weak, nonatomic) IBOutlet UIImageView *top;
+@property (weak, nonatomic) IBOutlet UIImageView *bottom;
 
 @end
 
 @implementation Game
 
 - (IBAction)startGame:(id)sender {
+    _tunnelTop.hidden = NO;
+    _tunnelBottom.hidden = NO;
+    
     _startGame.hidden = YES;
     birdMovment = [NSTimer scheduledTimerWithTimeInterval:0.03 target:self selector:@selector(birdMoving) userInfo:nil repeats:YES];
+    [self placeTunnels];
     
+    tunnelMovment = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(tunnelMoving) userInfo:nil repeats:YES];
+}
+-(void)tunnelMoving{
+    _tunnelTop.center = CGPointMake(_tunnelTop.center.x -1, _tunnelTop.center.y);
+    _tunnelBottom.center = CGPointMake(_tunnelBottom.center.x - 1, _tunnelBottom.center.y);
+    
+    if(_tunnelTop.center.x < -28 || _tunnelBottom.center.x < -28){
+        [self placeTunnels];
+    }
+    
+    
+}
+-(void)placeTunnels{
+    randomTopTunnelPosition = arc4random() % 350 ;
+    randomTopTunnelPosition = randomTopTunnelPosition - 228;
+    randomBottomTunnelPosition = randomTopTunnelPosition + 655;
+    
+    _tunnelTop.center = CGPointMake(340, randomTopTunnelPosition);
+    _tunnelBottom.center = CGPointMake(340, randomBottomTunnelPosition);
 }
 -(void)birdMoving{
     _bird.center = CGPointMake(_bird.center.x, _bird.center.y - birdFlight);
@@ -56,7 +87,9 @@ int birdFlight;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _tunnelTop.hidden = YES;
+    _tunnelBottom.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
